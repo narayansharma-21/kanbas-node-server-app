@@ -15,11 +15,13 @@ const createUser = async (req, res) => {
   };
   app.get("/api/users", findAllUsers);
   const findUserById = async (req, res) => { };
+  
   const updateUser = async (req, res) => {
     const { userId } = req.params;
     const status = await dao.updateUser(userId, req.body);
-    currentUser = await dao.findUserById(userId);
+    const currentUser = await dao.findUserById(userId);
     res.json(status);
+
   };
 
    const signup = async (req, res) => {
