@@ -20,7 +20,8 @@ app.put("/api/courses/:id", async (req, res) => {
   });
 
   app.delete("/api/courses/:id", async (req, res) => {
-    const { id } = req.params.courseId;
+    const { id } = req.params;
+    console.log(req.params)
     const status = await dao.deleteCourse(id);
     res.json(status)
   });

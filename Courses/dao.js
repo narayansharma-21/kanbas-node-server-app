@@ -6,5 +6,5 @@ export const createCourse = (course) => {
 export const findAllCourses = () => model.find();
 export const findCourseById = (courseId) => model.findById(courseId);
 export const updateCourse = (id, course) =>
-  model.updateOne({ _id: id }, { $set: course });
-export const deleteCourse = (courseId) => model.deleteOne({ _id: courseId });
+  model.updateOne({ id: id }, { $set: course });
+export const deleteCourse = (courseId) => model.deleteOne({ id: courseId });
